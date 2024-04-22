@@ -15,7 +15,7 @@
 
 """Sparse MLP Model."""
 
-from experiments.models.mlp import MLPModel
+from sequential_attention.experiments.models.mlp import MLPModel
 import tensorflow as tf
 
 

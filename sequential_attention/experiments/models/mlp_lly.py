@@ -15,8 +15,8 @@
 
 """Feature selection with Liao-Latty-Yang."""
 
-from benchmarks.liao_latty_yang import LiaoLattyYangMask
-from experiments.models.mlp import MLPModel
+from sequential_attention.benchmarks.liao_latty_yang import LiaoLattyYangMask
+from sequential_attention.experiments.models.mlp import MLPModel
 import tensorflow as tf
 
 

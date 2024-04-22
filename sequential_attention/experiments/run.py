@@ -19,16 +19,18 @@ import json
 import os
 import pathlib
 import random
+import sys
+sys.path.append('./')
 
 from absl import app
 from absl import flags
 import numpy as np
-from experiments.datasets.dataset import get_dataset
-from experiments.models.mlp_lly import LiaoLattyYangModel
-from experiments.models.mlp_sa import SequentialAttentionModel
-from experiments.models.mlp_seql import SequentialLASSOModel
-from experiments.models.mlp_sparse import SparseModel
-from experiments.models.mlp_sand import SANDModel
+from sequential_attention.experiments.datasets.dataset import get_dataset
+from sequential_attention.experiments.models.mlp_lly import LiaoLattyYangModel
+from sequential_attention.experiments.models.mlp_sa import SequentialAttentionModel
+from sequential_attention.experiments.models.mlp_seql import SequentialLASSOModel
+from sequential_attention.experiments.models.mlp_sparse import SparseModel
+from sequential_attention.experiments.models.mlp_sand import SANDModel
 import tensorflow as tf
 
 

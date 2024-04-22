@@ -19,7 +19,7 @@ import os
 
 from absl import app
 
-from experiments import hyperparams
+from sequential_attention.experiments import hyperparams
 
 
 def get_cmd(params):

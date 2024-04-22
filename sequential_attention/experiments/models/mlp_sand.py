@@ -1,6 +1,6 @@
 """Selection with Additive Noise Distortion"""
 
-from experiments.models.mlp import MLPModel
+from sequential_attention.experiments.models.mlp import MLPModel
 import tensorflow as tf
 import numpy as np
 
