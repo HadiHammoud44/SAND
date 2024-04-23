@@ -56,11 +56,11 @@ def main(_):
         'sigma': 1.5, # only used by sand
     }
 
-  for seed in range(1,2):
+  for seed in range(1,11):
     for k in [60]:
       parameters += [
           get_params(k, name, seed)
-          for name in ['mice']
+          for name in ['mice', 'mnist', 'fashion', 'isolet', 'coil', 'activity']
       ]
 
   for params in parameters:
