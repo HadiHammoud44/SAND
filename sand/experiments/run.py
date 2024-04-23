@@ -25,12 +25,12 @@ sys.path.append('./')
 from absl import app
 from absl import flags
 import numpy as np
-from sequential_attention.experiments.datasets.dataset import get_dataset
-from sequential_attention.experiments.models.mlp_lly import LiaoLattyYangModel
-from sequential_attention.experiments.models.mlp_sa import SequentialAttentionModel
-from sequential_attention.experiments.models.mlp_seql import SequentialLASSOModel
-from sequential_attention.experiments.models.mlp_sparse import SparseModel
-from sequential_attention.experiments.models.mlp_sand import SANDModel
+from sand.experiments.datasets.dataset import get_dataset
+from sand.experiments.models.mlp_lly import LiaoLattyYangModel
+from sand.experiments.models.mlp_sa import SequentialAttentionModel
+from sand.experiments.models.mlp_seql import SequentialLASSOModel
+from sand.experiments.models.mlp_sparse import SparseModel
+from sand.experiments.models.mlp_sand import SANDModel
 import tensorflow as tf
 
 

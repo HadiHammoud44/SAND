@@ -16,7 +16,7 @@
 """Set up datasets for feature selection experiments."""
 
 import numpy as np
-from sequential_attention.experiments.datasets import data_loader
+from sand.experiments.datasets import data_loader
 import tensorflow as tf
 
 

@@ -15,8 +15,8 @@
 
 """Feature selection with Sequential LASSO."""
 
-from sequential_attention.benchmarks.sequential_lasso import SequentialLassoRegularizer
-from sequential_attention.experiments.models.mlp import MLPModel
+from sand.benchmarks.sequential_lasso import SequentialLassoRegularizer
+from sand.experiments.models.mlp import MLPModel
 import tensorflow as tf
 
 
