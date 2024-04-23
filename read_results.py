@@ -5,13 +5,13 @@ import pandas as pd
 from tabulate import tabulate
 
 def process_dataset(dataset_name):
-    base_dir = 'PEDRAM'
+    base_dir = 'temp'
     dataset_dir = os.path.join(base_dir, dataset_name)
 
     results = []
     k = 60
 
-    for model in ['SA', 'LLY', 'GL', 'SEQL', 'STD1-5_zero']:
+    for model in ['SA', 'LLY', 'GL', 'SEQL', 'SAND']:
         test_accs = []
 
         for seed in range(1, 11):

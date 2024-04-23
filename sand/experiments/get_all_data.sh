@@ -13,21 +13,21 @@
 # limitations under the License.
 
 # get activity
-cd sequential_attention/experiments/datasets/activity
+cd sand/experiments/datasets/activity
 sh get_activity.sh
 cd ../../../..
 
 # get coil
-cd sequential_attention/experiments/datasets/coil
+cd sand/experiments/datasets/coil
 sh get_coil.sh
 cd ../../../..
 
 # get isolet
-cd sequential_attention/experiments/datasets/isolet
+cd sand/experiments/datasets/isolet
 sh get_isolet.sh
 cd ../../../..
 
 # get mice
-cd sequential_attention/experiments/datasets/mice
+cd sand/experiments/datasets/mice
 sh get_mice.sh
 cd ../../../..

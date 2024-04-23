@@ -33,7 +33,7 @@ def get_cmd(params):
 
 
 def main(_):
-  base_name = 'STDwaw'
+  base_name = 'SAND'
   base_dir = './temp'
   parameters = []
   def get_params(k, name, seed):
@@ -57,7 +57,7 @@ def main(_):
     }
 
   for seed in range(1,2):
-    for k in [20]:
+    for k in [60]:
       parameters += [
           get_params(k, name, seed)
           for name in ['mice']

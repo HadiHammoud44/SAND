@@ -1,6 +1,6 @@
 # Selection with Additive Noise Distortion
 
-SAND is a feature selection algorithm for neural networks based on simple noise addition.
+SAND is a feature selection algorithm for neural networks based on simple addition of a noise layer.
 
 ## Experiments
 This project was built using `Python 3.9.2`
