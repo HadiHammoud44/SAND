@@ -41,7 +41,7 @@ class SANDModel(MLPModel):
 
   def call(self, inputs):
     inputs = self.select(inputs)
-    representation = self.mlp_model(inputs)  # other layers
+    representation = self.mlp_model(inputs) 
     prediction = self.mlp_predictor(representation)
     return prediction
   

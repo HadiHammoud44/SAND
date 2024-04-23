@@ -43,7 +43,7 @@ def main(_):
         'deep_layers': hyperparams.DEEP_LAYERS[name],
         'batch_size': hyperparams.BATCH[name],
         'num_epochs_select': hyperparams.EPOCHS[name],
-        'num_epochs_fit': hyperparams.EPOCHS_FIT[name],
+        'num_epochs_fit': hyperparams.EPOCHS_FIT[name], # not used by sand
         'learning_rate': hyperparams.LEARNING_RATE[name],
         'alpha': 0,
         'decay_rate': 1,
