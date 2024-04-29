@@ -53,7 +53,7 @@ def main(_):
         'enable_batch_norm': False,
         'num_inputs_to_select_per_step': 1,
         'model_dir': f'{base_dir}/{name}/{k}/{base_name}_seed_{seed}/',
-        'sigma': 1.5, # only used by sand
+        'sigma': hyperparams.SIGMA[name], # only used by sand
     }
 
   for seed in range(1,11):

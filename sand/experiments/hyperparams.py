@@ -44,3 +44,12 @@ DEEP_LAYERS = {
     'isolet': '205', 
     'activity': '187', 
 }
+
+SIGMA = {
+    'mice': 1.5,
+    'mnist': 1.5,
+    'fashion': 1.5,
+    'isolet': 1.5,
+    'coil': 1.5,
+    'activity': 1.5,
+}
