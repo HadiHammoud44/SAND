@@ -20,7 +20,7 @@ class SAND_Layer(tf.keras.layers.Layer):
         wabs = tf.abs(self.w)
         wabs = wabs - tf.nn.relu(wabs - 1)
         
-        wn = wabs / tf.sqrt(tf.reduce_sum(wabs**2)) * tf.sqrt(self.num_inputs_to_select)
+        wn = wabs / tf.sqrt(tf.reduce_sum(wabs**2)) * tf.sqrt( float(self.num_inputs_to_select) )
         self.w.assign(wn)
         
         inpwn = inputs * tf.expand_dims(wn, 0)
