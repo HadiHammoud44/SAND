@@ -6,3 +6,7 @@
 *.pdf
 *.ipynb
 *.png
+*.csv
+*.xls
+*.data
+*.zip

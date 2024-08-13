@@ -43,7 +43,7 @@ flags.DEFINE_integer("seed", 2023, "Random seed")
 flags.DEFINE_enum(
     "data_name",
     "mnist",
-    ["mnist", "fashion", "isolet", "mice", "coil", "activity"],
+    ["mnist", "fashion", "isolet", "mice", "coil", "activity", "california_housing", "madelon", "har70"],
     "Data name",
 )
 flags.DEFINE_string(
@@ -112,6 +112,7 @@ def run_trial(
       if is_classification
       else tf.keras.losses.MeanAbsoluteError()
   )
+  metric = "accuracy" if is_classification else "mean_absolute_error"
 
   model_dir = pathlib.Path(FLAGS.model_dir)
   model_dir_select = model_dir / "select"
@@ -156,7 +157,7 @@ def run_trial(
   if FLAGS.algo in ALGOS:
     args = {**mlp_args, **fs_args}
     mlp_select = ALGOS[FLAGS.algo](**args)
-    mlp_select.compile(loss=loss_fn, metrics=["accuracy"])
+    mlp_select.compile(loss=loss_fn, metrics=metric)
     mlp_select.fit(
         ds_train, validation_data=ds_val, epochs=num_epochs_select, verbose=0
     )
@@ -212,7 +213,7 @@ def run_trial(
     mlp_fit.select.w.assign(mlp_fit.select.w * selected_features)
   else:
     mlp_fit = SparseModel(selected_features=selected_features, **mlp_args)
-    mlp_fit.compile(loss=loss_fn, metrics=["accuracy"])
+    mlp_fit.compile(loss=loss_fn, metrics=metric)
     mlp_fit.fit(
         ds_train, validation_data=ds_val, epochs=num_epochs_fit, verbose=0
     )
@@ -223,8 +224,8 @@ def run_trial(
   results = dict()
   results_val = mlp_fit.evaluate(ds_val, return_dict=True)
   results_test = mlp_fit.evaluate(ds_test, return_dict=True)
-  results["val"] = round(results_val["accuracy"], 4)
-  results["test"] = round(results_test["accuracy"], 4)
+  results["val"] = round(results_val[metric], 4)
+  results["test"] = round(results_test[metric], 4)
 
   with open(model_dir_fit / "results.json", "w") as fp:
     json.dump(results, fp)

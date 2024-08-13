@@ -7,6 +7,9 @@ LEARNING_RATE = {
     'isolet': 1e-3,
     'coil': 1e-3,
     'activity': 1e-3,
+    'california_housing': 1e-3,
+    'madelon': 1e-3,
+    'har70': 1e-3,
 }
 
 BATCH = {
@@ -16,6 +19,9 @@ BATCH = {
     'isolet': 64,
     'coil': 64,
     'activity': 64,
+    'california_housing': 64,
+    'madelon': 64,
+    'har70': 64,
 }
 
 EPOCHS = {
@@ -25,6 +31,9 @@ EPOCHS = {
     'isolet': 400,
     'coil': 1000,
     'activity': 200,
+    'california_housing': 200,
+    'madelon': 500,
+    'har70': 6,
 }
 
 EPOCHS_FIT = {
@@ -34,6 +43,9 @@ EPOCHS_FIT = {
     'isolet': 200,
     'coil': 500,
     'activity': 100,
+    'california_housing': 100,
+    'madelon': 250,
+    'har70': 3,
 }
 
 DEEP_LAYERS = {
@@ -43,6 +55,9 @@ DEEP_LAYERS = {
     'coil': '133', 
     'isolet': '205', 
     'activity': '187', 
+    'california_housing': '3',
+    'madelon': '166',
+    'har70': '35',
 }
 
 SIGMA = {
@@ -52,4 +67,7 @@ SIGMA = {
     'isolet': 1.5,
     'coil': 1.5,
     'activity': 1.5,
+    'california_housing': 1.5,
+    'madelon': 1.5,
+    'har70': 1.5,
 }

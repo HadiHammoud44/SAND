@@ -53,6 +53,21 @@ def get_dataset(data_name, val_ratio, batch_size):
         data_loader.load_mnist()
     )
 
+  elif data_name == "california_housing":
+    (x_train, x_test, y_train, y_test, is_classification, num_classes) = (
+        data_loader.load_housing()
+    )
+
+  elif data_name == "madelon":
+    (x_train, x_test, y_train, y_test, is_classification, num_classes) = (
+        data_loader.load_madelon()
+    )
+
+  elif data_name == "har70":
+    (x_train, x_test, y_train, y_test, is_classification, num_classes) = (
+        data_loader.load_har70()
+    )
+    
   else:
     raise NotImplementedError
 

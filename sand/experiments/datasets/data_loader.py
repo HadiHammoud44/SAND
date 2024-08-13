@@ -22,6 +22,9 @@ import pandas as pd
 from PIL import Image
 from sklearn.preprocessing import MinMaxScaler
 import tensorflow as tf
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+import urllib.request as urllib2 
 
 
 DATA_DIR = os.path.dirname(os.path.realpath(__file__))
@@ -289,5 +292,81 @@ def load_fashion():
   print("Data shapes:")
   print(x_train.shape, y_train.shape)
   print(x_test.shape, y_test.shape)
+
+  return (x_train, x_test, y_train, y_test, is_classification, num_classes)
+
+def load_housing():
+  """Loads the california housing dataset"""
+
+  is_classification = False
+  num_classes = 0
+
+  (X,y) = fetch_california_housing(return_X_y=True)
+
+  x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+  x_train = pd.DataFrame(x_train)
+  x_test = pd.DataFrame(x_test)
+  y_train = pd.DataFrame(y_train, dtype=np.float32).iloc[:, 0]
+  y_test = pd.DataFrame(y_test, dtype=np.float32).iloc[:, 0]
+
+  print("Data loaded...")
+  print("Data shapes:")
+  print(x_train.shape, y_train.shape)
+  print(x_test.shape, y_test.shape)
+
+  return (x_train, x_test, y_train, y_test, is_classification, num_classes)
+
+def load_madelon():
+  """Loads the Madelon dataset, adapted from: https://github.com/GhadaSokar/WAST"""
+
+  train_data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/madelon/MADELON/madelon_train.data'
+  train_resp_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/madelon/MADELON/madelon_train.labels'
+  val_data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/madelon/MADELON/madelon_valid.data'
+  val_resp_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/madelon/madelon_valid.labels'
+
+  x_train = np.loadtxt(urllib2.urlopen(train_data_url)).astype('float32')
+  y_train = np.loadtxt(urllib2.urlopen(train_resp_url))
+  x_test =  np.loadtxt(urllib2.urlopen(val_data_url)).astype('float32')
+  y_test =  np.loadtxt(urllib2.urlopen(val_resp_url))  
+
+  y_train = np.maximum(y_train, 0)
+  y_test = np.maximum(y_test, 0)
+
+  x_train = pd.DataFrame(x_train)
+  x_test = pd.DataFrame(x_test)
+  y_train = pd.DataFrame(y_train, dtype=np.int32).iloc[:, 0]
+  y_test = pd.DataFrame(y_test, dtype=np.int32).iloc[:, 0]
+
+  print("Data loaded...")
+  print("Data shapes:")
+  print(x_train.shape, y_train.shape)
+  print(x_test.shape, y_test.shape)
+
+  is_classification = True
+  num_classes = 2
+
+  return (x_train, x_test, y_train, y_test, is_classification, num_classes)
+
+def load_har70():
+  """Loads the HAR70+ dataset"""
+
+  x_train = np.load(os.path.join(DATA_DIR, 'har70/x_train.npy'))
+  y_train = np.load(os.path.join(DATA_DIR, 'har70/y_train.npy'))
+  x_test = np.load(os.path.join(DATA_DIR, 'har70/x_test.npy'))
+  y_test = np.load(os.path.join(DATA_DIR, 'har70/y_test.npy'))
+
+  x_train = pd.DataFrame(x_train)
+  x_test = pd.DataFrame(x_test)
+  y_train = pd.DataFrame(y_train, dtype=np.int32).iloc[:, 0]
+  y_test = pd.DataFrame(y_test, dtype=np.int32).iloc[:, 0]
+
+  print("Data loaded...")
+  print("Data shapes:")
+  print(x_train.shape, y_train.shape)
+  print(x_test.shape, y_test.shape)
+
+  is_classification = True
+  num_classes = 8
 
   return (x_train, x_test, y_train, y_test, is_classification, num_classes)
