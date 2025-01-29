@@ -43,7 +43,7 @@ flags.DEFINE_integer("seed", 2023, "Random seed")
 flags.DEFINE_enum(
     "data_name",
     "mnist",
-    ["mnist", "fashion", "isolet", "mice", "coil", "activity", "california_housing", "madelon", "har70"],
+    ["mnist", "fashion", "isolet", "mice", "coil", "activity", "california_housing", "madelon", "har70", "multispectral"],
     "Data name",
 )
 flags.DEFINE_string(

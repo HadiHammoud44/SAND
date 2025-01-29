@@ -7,9 +7,9 @@ This project was built using `Python 3.9.2`
 
 To download the datasets run `sh sand/experiments/get_all_data.sh`
 
-To run the full experiments for `SAND`, run `python -m sand.experiments.experiment`
+To run the experiments for `SAND` on the 6 standard datasets, run `python -m sand.experiments.experiment`
 
-**Note:** You can change the algorithm in the `experiment` file to run the experiments for other methods
+**Note:** To run the experiments for `SAND` on the other datasets, change the dataset name and the corresponding number of features to select in the `experiment` file. Additionally, you can change the algorithm to run the experiments for other methods.
 
 ## Acknowledgements
 

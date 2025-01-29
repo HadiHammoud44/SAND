@@ -370,3 +370,26 @@ def load_har70():
   num_classes = 8
 
   return (x_train, x_test, y_train, y_test, is_classification, num_classes)
+
+def load_multispectral():
+  """Loads the Multispectral dataset"""
+
+  X = np.load(os.path.join(DATA_DIR, 'multispectral/concatenated.npy'))
+  y = np.load(os.path.join(DATA_DIR, 'multispectral/labels.npy'))
+
+  x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+  x_train = pd.DataFrame(x_train)
+  x_test = pd.DataFrame(x_test)
+  y_train = pd.DataFrame(y_train, dtype=np.int32).iloc[:, 0]
+  y_test = pd.DataFrame(y_test, dtype=np.int32).iloc[:, 0]
+
+  print("Data loaded...")
+  print("Data shapes:")
+  print(x_train.shape, y_train.shape)
+  print(x_test.shape, y_test.shape)
+
+  is_classification = True
+  num_classes = 4
+
+  return (x_train, x_test, y_train, y_test, is_classification, num_classes)

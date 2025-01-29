@@ -67,6 +67,11 @@ def get_dataset(data_name, val_ratio, batch_size):
     (x_train, x_test, y_train, y_test, is_classification, num_classes) = (
         data_loader.load_har70()
     )
+
+  elif data_name == "multispectral":
+    (x_train, x_test, y_train, y_test, is_classification, num_classes) = (
+        data_loader.load_multispectral()
+    )
     
   else:
     raise NotImplementedError

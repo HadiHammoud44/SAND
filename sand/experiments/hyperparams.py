@@ -10,6 +10,7 @@ LEARNING_RATE = {
     'california_housing': 1e-3,
     'madelon': 1e-3,
     'har70': 1e-3,
+    'multispectral': 1e-3,
 }
 
 BATCH = {
@@ -22,6 +23,7 @@ BATCH = {
     'california_housing': 64,
     'madelon': 64,
     'har70': 64,
+    'multispectral': 64,
 }
 
 EPOCHS = {
@@ -34,6 +36,7 @@ EPOCHS = {
     'california_housing': 200,
     'madelon': 500,
     'har70': 6,
+    'multispectral': 20,
 }
 
 EPOCHS_FIT = {
@@ -46,6 +49,7 @@ EPOCHS_FIT = {
     'california_housing': 100,
     'madelon': 250,
     'har70': 3,
+    'multispectral': 10,
 }
 
 DEEP_LAYERS = {
@@ -58,6 +62,7 @@ DEEP_LAYERS = {
     'california_housing': '3',
     'madelon': '166',
     'har70': '35',
+    'multispectral': '5',
 }
 
 SIGMA = {
@@ -70,4 +75,5 @@ SIGMA = {
     'california_housing': 1.5,
     'madelon': 1.5,
     'har70': 1.5,
+    'multispectral': 1.5,
 }
