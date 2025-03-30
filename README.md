@@ -29,8 +29,8 @@ To run the experiments for `SAND` on the 6 standard datasets, run `python -m san
     <tr>
       <td>Mice</td>
       <td align="center">Accuracy</td>
-      <td>0.989 ± 0.006</td>
       <td>0.988 ± 0.006</td>
+      <td>0.988 ± 0.005</td>
     </tr>
     <tr>
       <td>Activity</td>
